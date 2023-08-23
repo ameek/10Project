@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@98.6,472&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./vally.jpg");
+  background-size: cover;
+  background-postion: center center;
+  min-height: 100vh;
+  font-family: open-sans, sans-sarif;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 5rem;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-text {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 2rem;
+}
+
+span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+    * {
+        font-size: 14px;
+    }
+    h1{
+        font-size: 3rem;
+    }
+  }
