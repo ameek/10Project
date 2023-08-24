@@ -88,29 +88,61 @@ const Quiz = [
 ];
 
 //html elelment
+
+const question_dev = document.getElementById("question_div");
+
+const allRadioEl = document.querySelectorAll(".answer");
+
 const questionEl = document.getElementById("question");
 const a_labelEl = document.getElementById("a_label");
 const b_labelEl = document.getElementById("b_label");
 const c_labelEl = document.getElementById("c_label");
 const d_labelEl = document.getElementById("d_label");
 
+const buttonEvent = document.getElementById("submit");
+
 //quiz loading
-current_quiz = 0;
-score = 0;
+let current_quiz = 0;
+let score = 0;
 
+//clear Selection
+function clearRadioSelction() {
+  allRadioEl.forEach((element) => {
+    element.checked = false;
+  });
+}
+
+//quiz populate
 function getQuizQue() {
+  clearRadioSelction();
   const quizItem = Quiz[current_quiz];
-
-  console.log(quizItem.question);
-
   questionEl.innerHTML = quizItem.question;
   a_labelEl.innerHTML = quizItem.a;
   b_labelEl.innerHTML = quizItem.b;
   c_labelEl.innerHTML = quizItem.c;
   d_labelEl.innerHTML = quizItem.d;
-  current_quiz++;
 }
 
-getQuizQue();
+//getting the button event
+buttonEvent.addEventListener("click", () => {
+  const quizItem = Quiz[current_quiz];
 
-// setInterval(getQuizQue, 2000);
+  if (current_quiz < 1) {
+    allRadioEl.forEach((element) => {
+      if (element.checked === true) {
+        if (element.id === quizItem.correct_answer) {
+          score++;
+        }
+        current_quiz++;
+        getQuizQue();
+      }
+    });
+  } else {
+    question_dev.innerHTML = `<h2>your quiz is done, your score ${score}/${Quiz.length} que answered.</h2>
+    <button onClick="location.reload()">Reload</button>
+    `;
+    buttonEvent.style.display = 'none';
+  }
+});
+
+getQuizQue();
