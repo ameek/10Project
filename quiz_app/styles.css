@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@98.6,472&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c3cbdc;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+  min-height: 100vh;
+  font-family: open-sans, sans-sarif;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-container {
+  background-color: #fff;
+  box-shadow: 5px 10px 8px 6px #888888;
+  width: 500px;
+  max-width: 100%;
+  /* padding: 2rem; */
+  border-radius: 10px;
+}
+
+.quiz-container h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  /* margin: 0; */
+  /* padding: 0; */
+}
+
+
+button {
+  background-color: #546de5;
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4454a6;
+}
+
+button:focus {
+  background-color: #34407c;
+}
